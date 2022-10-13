@@ -46,7 +46,7 @@ pipeline {
         stage("deploy") {
             steps {
                 script {
-                    echo "deploying"
+                    echo "deploying git ${env.GIT_BRANCH}"
                     //gv.deployApp()
                 }
             }
