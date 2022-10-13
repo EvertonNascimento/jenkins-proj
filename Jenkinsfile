@@ -35,7 +35,7 @@ pipeline {
 
         stage("test"){
             when {
-                expression{ BRANCH_NAME == "test-branch"  }
+                expression{ "$env.BRANCH_NAME" == "test-branch"  }
             }
             steps{ 
                 echo 'running tests on test-branch'
