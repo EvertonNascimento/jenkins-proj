@@ -2,6 +2,12 @@ def gv
 
 pipeline {
     agent any
+
+    parameters{
+        string(name: 'VERSION', defaultValue: '', description: '')
+
+    }
+
     stages {
         stage("init") {
             steps {
@@ -26,6 +32,18 @@ pipeline {
                 }
             }
         }
+
+        stage("test"){
+            when {
+                expression{
+                    BRANCH_NAME == "test-branch" 
+                }
+
+            }
+            steps{ echo 'running tests on test-branch'}
+            
+        }
+
         stage("deploy") {
             steps {
                 script {
