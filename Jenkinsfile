@@ -38,10 +38,10 @@ pipeline {
                 expression{
                     BRANCH_NAME == "test-branch" 
                 }
-
             }
-            steps{ echo 'running tests on test-branch'}
-            
+            script{
+                steps{ echo 'running tests on test-branch'}
+            }   
         }
 
         stage("deploy") {
