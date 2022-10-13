@@ -47,6 +47,7 @@ pipeline {
             steps {
                 script {
                     echo "deploying git ${env.GIT_BRANCH}"
+                    echo "deploying version ${params.VERSION}"
                     //gv.deployApp()
                 }
             }
