@@ -35,7 +35,7 @@ pipeline {
 
         stage("test"){
             when {
-                expression{ env.GIT_BRANCH == "test-branch"  }
+                expression{ env.GIT_BRANCH == "origin/test-branch"  }
             }
             steps{ 
                 echo 'running tests on test-branch'
